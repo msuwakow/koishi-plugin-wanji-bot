@@ -1,7 +1,7 @@
 {
   "name": "koishi-plugin-wanji-bot",
-  "description": "A bot that replies the number of players waiting for the maimai in Wanliu Hualian.",
-  "version": "1.0.0",
+  "description": "A koishi plugin that replies the number of players waiting for the maimai in Wanliu Hualian.",
+  "version": "1.0.1",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
   "files": [
@@ -9,8 +9,13 @@
     "dist"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msuwakow/koishi-plugin-wanji-bot"
+  },
   "scripts": {},
   "keywords": [
+    "maimai",
     "chatbot",
     "koishi",
     "plugin"
@@ -18,5 +23,12 @@
   "devDependencies": {},
   "peerDependencies": {
     "koishi": "^4.17.9"
+  },
+  "koishi": {
+    "description": {
+      "en": "A koishi plugin that replies the number of players waiting for the maimai in Wanliu Hualian.",
+      "zh": "一个koishi插件，用于回答万柳华联的maimai有几位玩家在排队。"
+    },
+    "preview": true
   }
 }

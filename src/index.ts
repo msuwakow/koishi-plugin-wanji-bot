@@ -1,3 +1,8 @@
+/**
+ * This project is related to the homework of JavaScript-2024 of PKU.
+ * Secret code: 94CE80AF033EF04283B36BC2BE09CAA8
+ */
+
 import { Context, Schema } from 'koishi'
 
 export const name = 'wanji-bot'
@@ -8,16 +13,16 @@ export const Config: Schema<Config> = Schema.object({})
 
 let number_of_players: number = 0
 
-function react (session, pl: number) {
-  let res: string;
+function react (pl: number) {
+  let res: string = '';
   if (pl > 6) {
-    res = '大比队，快跑';
+    res = '\n大比队，快跑';
   }
   if (pl > 0 && pl <= 2) {
-    res = '我去，谁在吧唧！';
+    res = '\n我去，谁在吧唧！';
   }
   if (pl === 0) {
-    res = '没人玩舞萌';
+    res = '\n没人玩舞萌';
   }
   return res;
 }
@@ -36,14 +41,14 @@ export function apply(ctx: Context) {
       }
       else {
         number_of_players = number;
-        session.send (`收到，万${number}\n${react (session, number)}`);
+        session.send (`收到，万${number}${react (number)}`);
         // react (session, number);
       }
     }
 
     if (session.content === '万几') {
       // session.send (`Debug: ${session.content}, ${session.content === '万几'}`)
-      session.send (`万${number_of_players}\n${react (session, number_of_players)}`);
+      session.send (`万${number_of_players}${react (number_of_players)}`);
       // react (session, number_of_players);
     }
   })
